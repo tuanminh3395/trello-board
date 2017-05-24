@@ -1,3 +1,21 @@
+# == Schema Information
+#
+# Table name: cards
+#
+#  id          :integer          not null, primary key
+#  list_id     :integer          not null
+#  title       :string(255)      not null
+#  description :text(65535)
+#  due_date    :datetime
+#  open        :boolean          default("1"), not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+# Indexes
+#
+#  index_cards_on_list_id  (list_id)
+#
+
 class Card < ApplicationRecord
   # Define has_many CardMember
   has_many  :card_members, :class_name => 'CardMember', :foreign_key => 'card_id'

@@ -1,10 +1,10 @@
 # create users
 users_data = [
-  { email: 'minh@gmail.com', password: '12345678', password_confirmation: '12345678', bio: 'Handsome', full_name: 'Minh' },
-  { email: 'duong@gmail.com', password: '12345678', password_confirmation: '12345678', bio: 'Pretty', full_name: 'Duong' },
-  { email: 'linh@gmail.com', password: '12345678', password_confirmation: '12345678', bio: 'Gay', full_name: 'Linh' },
-  { email: 'phung@gmail.com', password: '12345678', password_confirmation: '12345678', bio: 'Beautiful', full_name: 'Phung' },
-  { email: 'ha@gmail.com', password: '12345678', password_confirmation: '12345678', bio: 'Les', full_name: 'Ha' }
+  { email: 'minh@gmail.com', password_digest: '12345678', bio: 'Handsome', full_name: 'Minh' },
+  { email: 'duong@gmail.com', password_digest: '12345678', bio: 'Pretty', full_name: 'Duong' },
+  { email: 'linh@gmail.com', password_digest: '12345678', bio: 'Gay', full_name: 'Linh' },
+  { email: 'phung@gmail.com', password_digest: '12345678', bio: 'Beautiful', full_name: 'Phung' },
+  { email: 'ha@gmail.com', password_digest: '12345678', bio: 'Les', full_name: 'Ha' }
 ]
 
 users = users_data.reduce({}) do |result, user_data|
@@ -20,7 +20,7 @@ board = Board.create(
 
 # add all users to board
 users.map do |(key, user)|
-  BoardMember.create(board: board, member: user)
+  BoardMember.create(1, member_id: user)
 end
 
 # create lists

@@ -1,4 +1,4 @@
-Rails::Application.routes.draw do
+TrelloBoard::Application.routes.draw do
 
   root to: "main#index"
   resource :root, only: [:index]
